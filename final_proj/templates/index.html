@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/common.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/index.css') }}" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <title>나만의 버킷리스트</title>
+</head>
+
+<body>
+    <div class="container">
+        <h3><span class="highlight">{user.nickname}</span>님의 버킷리스트 <br /><span
+                class="highlight">{bucklist.length}</span>개 남았어요</h3>
+        <div class="bucket-create-box">
+            <input type="text" placeholder="버킷리스트를 입력하세요" />
+            <button type="button" id="createBtn">+</button>
+        </div>
+        <div class="bucket-list-box">
+            <div class="bucket-list-title">
+                <div class="left">버킷리스트</div>
+                <div class="right">달성</div>
+            </div>
+            <div class="bucket-list">
+                <div class="content">번지점프</div>
+                <div class="checkbox">
+                    <input type="checkbox" class="check" id="check1" checked /><label for="check1"></label>
+                </div>
+            </div>
+            <div class="bucket-list">
+                <div class="content">세계여행</div>
+                <div class="checkbox">
+                    <input type="checkbox" class="check" id="check2" /><label for="check2"></label>
+                </div>
+            </div>
+            <div class="bucket-list">
+                <div class="content">스카이다이빙</div>
+                <div class="checkbox">
+                    <input type="checkbox" class="check" id="check3" /><label for="check3"></label>
+                </div>
+            </div>
+            <div class="bucket-list">
+                <div class="content">교환학생</div>
+                <div class="checkbox">
+                    <input type="checkbox" class="check" id="check4" /><label for="check4"></label>
+                </div>
+            </div>
+            <div class="bucket-list">
+                <div class="content">워킹홀리데이</div>
+                <div class="checkbox">
+                    <input type="checkbox" class="check" id="check5" /><label for="check5"></label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- js -->
+    <script src="../static/js/index.js"></script>
+</body>
+
+</html>

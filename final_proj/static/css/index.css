@@ -1,0 +1,124 @@
+h3 {
+	font-size: 1.25rem;
+}
+
+.highlight {
+	color: #138900;
+}
+
+.bucket-create-box {
+	display: flex;
+	flex-direction: row;
+}
+
+.bucket-list-box {
+	display: flex;
+	flex-direction: column;
+	margin-top: 1rem;
+}
+
+.bucket-list-title {
+	display: flex;
+	flex-direction: row;
+	color: #828282;
+	font-weight: 600;
+	font-size: 0.88rem;
+	line-height: 2.5rem;
+}
+
+.bucket-list {
+	display: flex;
+	flex-direction: row;
+	color: #000;
+	font-size: 0.88rem;
+	line-height: 2.5rem;
+}
+
+.left,
+.content {
+	width: 18rem;
+	height: 2.5rem;
+}
+
+.right,
+.checkbox {
+	width: calc(100% - 18rem);
+	height: 2.5rem;
+	text-align: center;
+}
+
+.checkbox {
+	display: flex;
+	align-items: center;
+}
+
+input {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+input:focus {
+	outline: none;
+}
+
+input[type='text'] {
+	width: 18.44rem;
+	height: 2.5rem;
+	color: #828282;
+	border: 1px solid #e0e0e0;
+	border-radius: 8px;
+	margin-right: 0.25rem;
+}
+
+input[type='text']:focus {
+	border: 1px solid #000;
+}
+
+input[type='checkbox'] {
+	display: none;
+	width: 1.75rem;
+	height: 1.75rem;
+	border: 1px solid #138900;
+	border-radius: 8px;
+	line-height: 2.5rem;
+}
+
+input[type='checkbox']:focus {
+	outline: none;
+}
+
+label {
+	display: block;
+	width: 1.75rem;
+	height: 1.75rem;
+	margin: 0 auto;
+}
+
+/* off */
+.check + label {
+	background-repeat: no-repeat; /* 반복 방지 */
+	background-image: url('../icon/check_off.png'); /*off 이미지*/
+	background-size: cover;
+}
+/* on */
+.check:checked + label {
+	background-repeat: no-repeat; /* 반복 방지 */
+	background-image: url('../icon/check_on.png'); /*on 이미지*/
+	background-size: cover;
+}
+
+button {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	width: 2.5rem;
+	height: 2.5rem;
+	border: none;
+	border-radius: 8px;
+	background-color: #000;
+	color: #fff;
+}
+
+button:hover {
+	background-color: #e0e0e0;
+	color: #000;
+}
