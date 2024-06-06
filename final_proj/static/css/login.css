@@ -1,0 +1,52 @@
+@import url('common.css');
+
+.input-box {
+	width: 100%;
+	height: fit-content;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: space-between;
+	margin: 2rem auto 0;
+}
+
+input {
+	margin-bottom: 0.5rem;
+}
+
+.btn-box {
+	width: 100%;
+	height: 6rem;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: space-between;
+	margin: 1.5rem auto 0;
+}
+
+button {
+	-webkit-appearance: inherit;
+	-moz-appearance: inherit;
+	width: 20.44rem;
+	height: 2.5rem;
+	border: none;
+	border-radius: 8px;
+}
+
+#loginBtn {
+	background-color: #000;
+	color: #e0e0e0;
+}
+
+#loginBtn:hover {
+	background-color: #e0e0e0;
+	color: #000;
+}
+
+#registerBtn {
+	background-color: #fff;
+	color: #828282;
+}
+
+#registerBtn:hover {
+	background-color: #e0e0e0;
+	color: #000;
+}
