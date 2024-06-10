@@ -1,4 +1,3 @@
-from datetime import datetime
 from final_proj import db
 
 class User(db.Model):
