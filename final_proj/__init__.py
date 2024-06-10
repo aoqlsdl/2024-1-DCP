@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, g
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 
@@ -21,5 +21,10 @@ def create_app():
     from .views import main_views, auth_views
     app.register_blueprint(main_views.bp)
     app.register_blueprint(auth_views.bp)
+
+    # 로그인 정보 불러오기
+    @app.context_processor
+    def inject_user():
+        return dict(user=g.user)
 
     return app
