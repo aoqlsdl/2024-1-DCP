@@ -24,13 +24,3 @@ class LoginForm(FlaskForm):
     username = StringField('아이디', validators=[DataRequired(), Length(min=2, max=20)])
     password = PasswordField('비밀번호', validators=[DataRequired()])
     submit = SubmitField('로그인')
-
-    def validate_username(self, username):
-        user = User.query.filter_by(username=username.data).first()
-        if not user:
-            raise ValidationError('등록되지 않은 아이디입니다.')
-
-    def validate_password(self, password):
-        user = User.query.filter_by(password=password.data).first()
-        if not user:
-            raise ValidationError('비밀번호가 일치하지 않습니다.')

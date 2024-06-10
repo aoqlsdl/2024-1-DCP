@@ -16,13 +16,15 @@
     <div class="container">
         <h2>로그인</h2>
         <form method="post" action="{{ url_for('auth.login') }}">
+            <!-- CSRF protection -->
+            {{ form.hidden_tag() }}
             <div class="input-box">
-                <input type="text" placeholder="아이디" />
-                <input type="password" placeholder="비밀번호" />
+                <input type="text" placeholder="아이디" name="username" />
+                <input type="password" placeholder="비밀번호" name="password" />
             </div>
             <div class="btn-box">
                 <button type="submit" id="loginBtn">로그인</button>
-                <button type="button" id="registerBtn">회원가입</button>
+                <button type="button" id="registerBtn" onclick="location.href = '../register'">회원가입</button>
             </div>
         </form>
     </div>
