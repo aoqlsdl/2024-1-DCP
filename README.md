@@ -1,4 +1,4 @@
-> 디지털콘텐츠프로그래밍 기말프로젝트 레포지토리입니다.
+디지털콘텐츠프로그래밍 기말프로젝트 레포지토리입니다.
 
 <br>
 
@@ -24,7 +24,8 @@ source venv/bin/activate
 pip install -r requirements.txt
 
 ## setup environmental variables
-## 먼저, final_proj 폴더 내에 .env 파일을 생성한 후, 아래의 텍스트를 붙여넣습니다. 보안상 SECRET_KEY를 공개하면 안되지만, 부득이하게 SECRET_KEY를 문서에 작성하는 점 양해 부탁드립니다.
+## 먼저, final_proj 폴더 내에 .env 파일을 생성한 후, 아래의 텍스트를 붙여넣습니다.
+## 보안상 SECRET_KEY를 공개하면 안되지만, 부득이하게 SECRET_KEY를 문서에 작성하는 점 양해 부탁드립니다.
 SECRET_KEY=58wS77oICFxM0T7K
 
 ## initialize database
