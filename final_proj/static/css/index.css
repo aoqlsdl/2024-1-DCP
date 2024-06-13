@@ -1,3 +1,8 @@
+body {
+	height: 100vh;
+	position: relative;
+}
+
 h3 {
 	font-size: 1.25rem;
 }
@@ -121,4 +126,52 @@ button {
 button:hover {
 	background-color: #e0e0e0;
 	color: #000;
+}
+
+.footer {
+	width: 100%;
+	height: 3.5rem;
+	position: absolute;
+	bottom: 0;
+	display: flex;
+	color: #787878;
+	font-size: 0.5rem;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	border-top: 1px solid #e0e0e0;
+}
+
+.footer .left {
+	align-content: center;
+}
+
+p {
+	margin: 0.25rem auto;
+}
+
+.footer .right {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-end;
+}
+
+#logoutBtn {
+	border: none;
+	background-color: transparent;
+	font-size: 0.5rem;
+	font-weight: 700;
+	color: #787878;
+	height: 0.75rem;
+}
+
+.github-link {
+	width: fit-content;
+	height: fit-content;
+}
+
+#githubIcon {
+	width: 1rem;
+	height: 1rem;
 }
