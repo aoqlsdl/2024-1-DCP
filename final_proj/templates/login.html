@@ -10,12 +10,16 @@
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>로그인</title>
+    <script>
+        const loginUrl = "{{ url_for('auth.login') }}";
+        const mainIndexUrl = "{{ url_for('main.index') }}";
+    </script>
 </head>
 
 <body>
     <div class="container">
         <h2>로그인</h2>
-        <form method="post" action="{{ url_for('auth.login') }}">
+        <form method="post" id="loginForm" action="{{ url_for('auth.login') }}">
             <!-- CSRF protection -->
             {{ form.hidden_tag() }}
             <div class="input-box">
@@ -30,7 +34,7 @@
     </div>
 
     <!-- js -->
-    <script src="../../static/js/login.js"></script>
+    <script src="{{ url_for('static', filename='../../../static/js/login.js') }}"></script>
 </body>
 
 </html>

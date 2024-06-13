@@ -1,5 +1,5 @@
 # 참고: https://wikidocs.net/81057
-from flask import Blueprint, url_for, render_template, request, session, g
+from flask import Blueprint, url_for, render_template, request, session, g, jsonify
 from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import redirect
 from functools import wraps
@@ -31,22 +31,28 @@ def register():
 @bp.route('/login/', methods=('GET', 'POST'))
 def login():
     form = LoginForm()
-
-    if request.method == 'POST' and form.validate_on_submit():
-        error = None
-        user = User.query.filter_by(username=form.username.data).first()
-        if not user:
-            error = "존재하지 않는 사용자입니다."
-        elif not check_password_hash(user.password, form.password.data):
-            error = "비밀번호가 올바르지 않습니다."
+    if request.method == 'POST':
+        if form.validate_on_submit():
+            error = None
+            user = User.query.filter_by(username=form.username.data).first()
+            if not user:
+                error = "존재하지 않는 사용자입니다."
+            elif not check_password_hash(user.password, form.password.data):
+                error = "비밀번호가 올바르지 않습니다."
             
-        if error is None:
-            session.clear()
-            session['user_id'] = user.id
-            return redirect(url_for('main.index'))
-        print(error)
-    return render_template('login.html', form=form)
-
+            if error is None:
+                session.clear()
+                session['user_id'] = user.id
+                return jsonify({'success': True, 'message':'로그인 성공'})
+            else:
+                return jsonify({'success': False, 'message': error})
+        else:
+            return jsonify({'success': False, 'message': '제출 폼이 유효하지 않습니다.'})
+    elif request.method == 'GET':
+        return render_template('login.html', form=form)
+    else:
+        return jsonify({'success': False, 'message': 'Invalid request method'})
+    
 # 로그인 여부 확인
 @bp.before_app_request
 def is_login():
@@ -72,3 +78,16 @@ def logout():
     session.clear()
     print('로그아웃 완료')
     return redirect(url_for('auth.login'))
+
+# username, nickname 중복 검사
+@bp.route('/check/username', methods=['POST'])
+def check_username():
+    username = request.json.get('username')
+    user = User.query.filter_by(username=username).first()
+    return jsonify({'exists': bool(user)})
+
+@bp.route('/check/nickname', methods=['POST'])
+def check_nickname():
+    nickname = request.json.get('nickname')
+    user = User.query.filter_by(nickname=nickname).first()
+    return jsonify({'exists': bool(user)})

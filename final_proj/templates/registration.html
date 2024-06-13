@@ -10,6 +10,11 @@
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>회원가입</title>
+    <!-- username, nickname 중복 검사 -->
+    <script>
+        const checkUsernameUrl = "{{ url_for('auth.check_username') }}";
+        const checkNicknameUrl = "{{ url_for('auth.check_nickname') }}";
+    </script>
 </head>
 
 <body>
@@ -26,7 +31,7 @@
                 <input type="text" placeholder="닉네임" name="nickname" value="{{ form.nickname.data or '' }}" />
             </div>
             <div class="btn-box">
-                <button type="submit" id="loginBtn">회원가입 완료</button>
+                <button type="submit" id="loginBtn" disabled>회원가입 완료</button>
                 <button type="button" id="registerBtn">로그인 페이지로 이동</button>
             </div>
         </form>
@@ -34,7 +39,7 @@
 
 
     <!-- js -->
-    <script src="../../static/js/register.js"></script>
+    <script src="{{ url_for('static', filename='../../../static/js/register.js') }}"></script>
 </body>
 
 </html>
