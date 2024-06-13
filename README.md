@@ -18,6 +18,7 @@
 # Project Setup Instructions
 
 ## Clone the repository
+# 사이버캠퍼스를 통해서 압축폴더를 다운 받으셨다면 cd final_proj만 입력해주세요.
 git clone https://github.com/aoqlsdl/2024-1-DCP.git
 cd final_proj
 
@@ -31,6 +32,7 @@ python3 -m venv venv
 source venv/bin/activate
 
 ## install dependencies
+# 설치하는데 시간이 다소 소요됩니다. 터미널이 멈추더라도 오류가 아니니 조금만 기다려주세요.
 pip install -r requirements.txt
 
 ## setup environmental variables
